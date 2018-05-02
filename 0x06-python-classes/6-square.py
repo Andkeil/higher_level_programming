@@ -1,11 +1,18 @@
 #!/usr/bin/python3
-""" 6-square """
+"""
+ 6-square module
+"""
 
 
 class Square:
-    """ Class: Square """
+    """
+    Class: Square with private attributes
+    """
     def __init__(self, size=0, position=(0, 0)):
-        """ init """
+        """Arguments:
+                     size: size of square
+                     position: position of square
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -15,22 +22,31 @@ class Square:
             self.position = position
 
     def area(self):
-        """ area """
+        """
+        return size squared
+        """
         return (self.size ** 2)
 
     @property
     def size(self):
-        """ size """
+        """
+        return size
+        """
         return (self.__size)
 
     @property
     def position(self):
-        """ position """
+        """
+        return position
+        """
         return (self.__position)
 
     @size.setter
     def size(self, value):
-        """ size """
+        """size: size of square
+        sets value if passes validation
+        raise error otherwise
+        """
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -40,14 +56,16 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """ position """
+        """ position
+        """
         if self._tuple_(value):
             self.__position = value
         elif not self._tuple_(value):
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def _tuple_(self, position):
-        """ _tuple """
+        """ _tuple check if tuple is valid
+        """
         if type(position) is not tuple or len(position) != 2:
             return False
         elif type(position[0]) is not int or position[0] < 0:
@@ -58,7 +76,8 @@ class Square:
             return True
 
     def my_print(self):
-        """ my_print """
+        """ print visual representation
+        """
         if self.size == 0:
             print()
             return
