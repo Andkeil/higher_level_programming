@@ -46,6 +46,7 @@ class Square:
         """size: size of square
         sets value if passes validation
         raise error otherwise
+        arguments: value: int
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -57,27 +58,22 @@ class Square:
     @position.setter
     def position(self, value):
         """ position
-        """
-        if self._tuple_(value):
-            self.__position = value
-        elif not self._tuple_(value):
-            raise TypeError("position must be a tuple of 2 positive integers")
 
-    def _tuple_(self, position):
-        """ _tuple check if tuple is valid
+        arguments: value: int
         """
-        if type(position) is not tuple or len(position) != 2:
-            return False
-        elif type(position[0]) is not int or position[0] < 0:
-            return False
-        elif type(position[1]) is not int or position[1] < 0:
-            return False
+
+        if type(value) is tuple and len(value) == 2 and type(value[0]) is int\
+           and type(value[1]) is int and value[0] >= 0 and value[1] >= 0:
+            self.__position = value
         else:
-            return True
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
         """ print visual representation
+        Arguments: none
         """
+
+
         if self.size == 0:
             print()
             return
