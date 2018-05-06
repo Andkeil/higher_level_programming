@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""
+Module to print new lines after delimiters are found
+Raise TypeError if not a string
+"""
+
+
 def text_indentation(text):
+    """
+    text_indentation: take in text and find delimiter to print new lines
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     try:

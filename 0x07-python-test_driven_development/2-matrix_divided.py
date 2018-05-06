@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+"""
+Module divides two lists from a matrix
+"""
+
+
 def matrix_divided(matrix, div):
+    """
+    matrix_divided: Divides list, raise TypeError on wrong input
+    """
     new_list = []
     row_len = len(matrix[0])
     for row in matrix:
