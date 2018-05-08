@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module: 3-rectangle
+module: 4-rectangle
 """
 
 
