@@ -55,12 +55,12 @@ class Rectangle:
         """
         public instance method: area
         """
-        if self.width or self.height:
-            return self.width * self.height
+        return (self.width * self.height)
 
     def perimeter(self):
         """
         public instance method: perimeter
         """
-        if self.width or self.height:
-            return (self.width * 2) + (self.height * 2)
+        if self.height == 0 or self.width == 0:
+            return 0
+        return (self.width * 2) + (self.height * 2)
