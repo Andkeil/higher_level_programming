@@ -15,8 +15,8 @@ class Rectangle:
         """
         init: self, width, height
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         self.__class__.number_of_instances += 1
 
     @property
@@ -73,14 +73,13 @@ class Rectangle:
         """
         __str__
         """
-        s = ""
-        a = str(self.print_symbol)
-        for i in range(self.__height):
-            for j in range(self.__width):
-                s = s + a
-            if i != int(self.__height) - 1:
-                s = s + "\n"
-        return s
+        if self.height == 0 or self.width == 0:
+            return ("")
+        width = '#' * self.width
+        rectangle = width
+        for i in range(self.height - 1):
+            rectangle += "\n" + width
+        return (rectangle)
 
     def __repr__(self):
         """
@@ -104,14 +103,14 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if Rectangle.area(rect_1) > Rectangle.area(rect_2):
-            return rect_1
-        else:
+        if Rectangle.area(rect_1) < Rectangle.area(rect_2):
             return rect_2
+        else:
+            return rect_1
 
     @classmethod
     def square(cls, size=0):
         """
         Class method: square
         """
-        return Rectangle(size, size)
+        return cls(size, size)
