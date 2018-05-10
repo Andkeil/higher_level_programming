@@ -69,10 +69,10 @@ class Rectangle:
         """
         __str__
         """
-        s = ""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                s = s + "#"
-            if i != int(self.__height) - 1:
-                s = s + "\n"
-        return s
+        if self.height == 0 or self.width == 0:
+            return ("")
+        width = '#' * self.width
+        rectangle = width
+        for i in range(self.height - 1):
+            rectangle += "\n" + width
+        return (rectangle)
