@@ -80,12 +80,12 @@ class TestRectangle(unittest.TestCase):
         Rect4 = Rectangle(13, 14, 15, 16, 5)
         Rect5 = Rectangle(2, 4, 5, 6, 7)
         Rect6 = Rectangle(3, 45, 4, 2, id="10")
-        self.assertEqual(R1.id, 1)
-        self.assertEqual(R2.id, 2)
-        self.assertEqual(R3.id, 3)
-        self.assertEqual(R4.id, 5)
-        self.assertEqual(R5.id, 7)
-        self.assertEqual(R6.id, "10")
+        self.assertEqual(Rect1.id, 1)
+        self.assertEqual(Rect2.id, 2)
+        self.assertEqual(Rect3.id, 3)
+        self.assertEqual(Rect4.id, 5)
+        self.assertEqual(Rect5.id, 7)
+        self.assertEqual(Rect6.id, "10")
 
     def test_1_arg(self):
         """
