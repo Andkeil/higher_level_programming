@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """
 Class Base
 """
+import json
 
 
 class Base:
@@ -13,7 +13,7 @@ class Base:
 
     def __init__(self, id=None):
         """
-        Initialization
+        method Initialization
         """
         if id is not None:
             self.id = id
