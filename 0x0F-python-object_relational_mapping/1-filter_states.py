@@ -13,6 +13,7 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id\
     ASC")
     for row in cur:
-        print("{}".format(row))
+        if row[1][0] == 'N':
+            print("{}".format(row))
     cur.close()
     db.close()
