@@ -15,6 +15,6 @@ if __name__ == "__main__":
     ",(sys.argv[4],))
     arr = cur.fetchall()
     for row in arr:
-        print("{}".format(row))
+        print(row)
     cur.close()
     db.close()
