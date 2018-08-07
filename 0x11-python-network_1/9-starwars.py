@@ -8,10 +8,9 @@ import sys
 
 if __name__ == "__main__":
     info = {'search': sys.argv[1]}
-    r = requests.get('https://swapi.co/api/people/', params=info)
-    print("Number of result: {}".format(r.json()['count']))
-    for i in range(0, r.json()['count']):
-        try:
-            print(r.json()['results'][i]['name'])
-        except:
-            continue
+    r = requests.get('https://swapi.co/api/people/', params=info).json()
+    count = r['count']
+    print("Number of results: {}".format(count))
+    if count > 0:
+        for thing in r['results']:
+            print(thing['name'])
