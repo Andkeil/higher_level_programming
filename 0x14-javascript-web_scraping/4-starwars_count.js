@@ -12,7 +12,7 @@ request(url, (error, response, body) => {
       let characterList = movieList[movie].characters;
       for (let id in characterList) {
         if (characterList[id].includes('18')) {
-	  wedgeCount += 1;
+          wedgeCount += 1;
         }
       }
     }
