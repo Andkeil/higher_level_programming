@@ -1,8 +1,8 @@
 #!/usr/bin/node
-let fs = require('fs');
-let url = process.argv[2];
-let filePath = process.argv[3];
-let request = require('request');
+const fs = require('fs');
+const url = process.argv[2];
+const filePath = process.argv[3];
+const request = require('request');
 
 request(url, (error, response, body) => {
   if (error) {

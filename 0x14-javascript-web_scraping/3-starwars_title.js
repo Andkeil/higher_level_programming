@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let epNum = process.argv[2];
-let url = 'http://swapi.co/api/films/';
-let request = require('request');
+const epNum = process.argv[2];
+const url = 'http://swapi.co/api/films/';
+const request = require('request');
 
 request(url + epNum, (error, response, body) => {
   if (error) {
